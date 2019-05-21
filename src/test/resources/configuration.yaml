@@ -1,0 +1,5 @@
+username: AutomationTestUser
+password: 123456
+apiGateway: http://assured.example.choerodon.io
+projectId: 1
+seleniumURL : http://localhost:4444/wd/hub

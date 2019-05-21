@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="-">
+    <suite-files >
+
+        <!--模块1-->
+        <suite-file path="suite/suite1.xml"/>
+
+        <!--模块2-->
+        <suite-file path="suite/suite2.xml"/>
+
+    </suite-files>
+</suite>

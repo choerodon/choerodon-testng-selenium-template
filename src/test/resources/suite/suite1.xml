@@ -1,0 +1,34 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="suite2" verbose="1">
+    <test name="test1">
+        <classes>
+            <class name="io.choerodon.testng.demo.ngnative.UnitTest"/>
+        </classes>
+    </test>
+    <test name="test2">
+        <parameter name="db" value="mysql"/>
+        <groups>
+            <run>
+                <include name="linux"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="io.choerodon.testng.demo.ngnative.GroupTest"/>
+        </classes>
+    </test>
+    <test name="test3">
+        <classes>
+            <class name="io.choerodon.testng.demo.ngnative.AnnotationTest"/>
+        </classes>
+    </test>
+    <test name="test4">
+        <classes>
+            <class name="io.choerodon.testng.demo.ngnative.FactoryTest"/>
+        </classes>
+    </test>
+    <test name="test5" parallel="methods" thread-count="3">
+        <classes>
+            <class name="io.choerodon.testng.demo.ngnative.ParallelTest"/>
+        </classes>
+    </test>
+</suite>
