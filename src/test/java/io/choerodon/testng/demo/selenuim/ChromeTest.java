@@ -12,6 +12,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import io.choerodon.testng.config.domain.TestConfigure;
+import io.choerodon.testng.config.utils.ReporterUtil;
 import io.choerodon.testng.config.utils.TestConfigureParse;
 
 @Test
@@ -23,8 +24,8 @@ public class ChromeTest {
     public void setUp() {
     }
 
-    @Test(description = "remote")
-    public void remote() {
+    @Test(description = "login")
+    public void login() {
         WebDriver driver = null;
 
         try {
@@ -35,9 +36,13 @@ public class ChromeTest {
 
         driver.get(testConfigure.getApiGateway());
         driver.manage().window().setSize(new Dimension(1440, 877));
+
+        ReporterUtil.inputData("登录名：" + testConfigure.getUsername() + "，" +
+                "密码：" + testConfigure.getPassword());
         driver.findElement(By.id("username")).sendKeys(testConfigure.getUsername());
         driver.findElement(By.id("password")).sendKeys(testConfigure.getPassword());
-        driver.findElement(By.cssSelector(".ant-btn")).click();
 
+        ReporterUtil.expectData("登陆成功");
+        driver.findElement(By.cssSelector(".ant-btn")).click();
     }
 }
