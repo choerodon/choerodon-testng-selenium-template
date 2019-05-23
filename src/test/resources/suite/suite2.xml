@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="suite3" verbose="1">
+    <test name="testSelenium">
+        <classes>
+            <class name="io.choerodon.testng.demo.selenuim.ChromeTest"/>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,5 @@
+username: AutomationTestUser
+password: 123456
+apiGateway: https://choerodon.com.cn
+projectId: 1
+seleniumURL : http://localhost:4444/wd/hub
